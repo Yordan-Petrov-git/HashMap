@@ -1,10 +1,11 @@
 package Models;
 
 /**
- * Head - firstElement
- * Tail - next
- * Size - size
- * Add method
+ * Node list implementation
+ * add  - adds element to the list
+ * toString - prints all elements of the list
+ * getFirstElementWithKey - gets first value of element with the key
+ * overrideElementWithKey - overrides value of the existing key
  */
 
 

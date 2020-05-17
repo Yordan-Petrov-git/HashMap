@@ -1,5 +1,8 @@
 package Models;
 /**
+ * Head
+ * Tail
+ * Size
  *  key from String can be generic
  *  value from String can be generic
  *  Node reference it points to the next node until the last node points to null
