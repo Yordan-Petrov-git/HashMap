@@ -1,2 +1,1 @@
-# LinkedHashMap 
-LinkedHashMap demo Implementation not optimized yet !
+HashMap demo Implementation not optimized yet !
