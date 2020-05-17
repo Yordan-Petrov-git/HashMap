@@ -15,15 +15,33 @@ public class NodeMap {
     }
 
     public void put(String key, String value) {
+
+        //get bucket for key
         int bucketIndex = getBucketIndex(key);
 
-        if (this.buckets[bucketIndex] == null) {//if null then we make it not to be null
+        // if this bucket does not exist, initialize  it with an empty list
+        if (this.buckets[bucketIndex] == null) {
             this.buckets[bucketIndex] = new NodeList();
         }
-        Node nodeToPut = new Node(key, value);
-        this.buckets[bucketIndex].add(nodeToPut);
 
-        System.out.println(bucketIndex);
+        //get the bucket where our element is added
+        NodeList currentBucket = this.buckets[bucketIndex];
+
+
+        Node existing =  currentBucket.getFirstElementWithKey(key);
+        //there is no element with this key
+        if (existing==null){
+
+            //create object of type 'Node' with key and value
+            Node nodeToPut = new Node(key, value);
+
+            //add the element to the current bucket
+            currentBucket.add(nodeToPut);
+
+            return;
+        }
+
+        currentBucket.overrideElementWithKey(key,value);
     }
 
 
@@ -31,14 +49,14 @@ public class NodeMap {
 
         int bucketIndex = getBucketIndex(key);
 
-        NodeList list = buckets[bucketIndex];
+        NodeList currentBucket = buckets[bucketIndex];
 
-        if (list == null) {
+        if (currentBucket == null) {
             return null;
         }
 
-        //Node node = list.getFirstNodeWithKey(key);
-        return  null;
+        Node node = currentBucket.getFirstElementWithKey(key);
+        return node.value;
     }
 
     private int getBucketIndex(String key) {

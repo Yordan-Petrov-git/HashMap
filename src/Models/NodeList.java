@@ -57,4 +57,30 @@ public class NodeList {
         }
         return null;
     }
+//only works if the key exists,otherwise does nothing
+    public void  overrideElementWithKey(String key, String value) {
+      Node currentNode = firstElement;
+      if (firstElement == null){
+          return;
+      }
+
+      Node nodeToReplaceWith = new Node (key,value);
+      if (key.equals(firstElement.key)){
+          nodeToReplaceWith.next =firstElement.next;
+          firstElement = nodeToReplaceWith;
+          return;
+      }
+
+      while(currentNode!=null){
+
+          if (currentNode.next!=null
+          && currentNode.next.key.equals(key)){
+              nodeToReplaceWith.next = currentNode.next.next;
+              currentNode.next = nodeToReplaceWith;
+              return;
+          }
+currentNode = currentNode.next;
+      }
+
+    }
 }
