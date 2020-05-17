@@ -1,6 +1,7 @@
 import Models.Node;
 import Models.NodeList;
 import Models.NodeMap;
+import jdk.swing.interop.SwingInterOpUtils;
 
 public class
 Main {
@@ -28,12 +29,36 @@ Main {
         nodeMap.put("Alice", "Sofia");
         nodeMap.put("Alice", "Plovdiv");
         nodeMap.put("Alice", "Varna");
+        nodeMap.put("Alice", "Varna");
+        nodeMap.put("Alice", "Varna");
+        nodeMap.put("Alice", "Varna");
+        nodeMap.put("Alice", "Varna");
+        nodeMap.put("Alice", "Varna");
+        nodeMap.put("Alice", "Varna");
+        nodeMap.put("Alice", "Varna");
+        nodeMap.put("Alice", "Varna");
+        nodeMap.put("Alice", "Varna");
 
-        nodeMap.put("Zoe", "Brussels");
-        nodeMap.put("Charlie", "Varna");
+//        nodeMap.put("Dylan", "Karnobat");
+//        nodeMap.put("Derek", "Sopot");
+//        nodeMap.put("Ali", "Trqvna");
+//        nodeMap.put("Adam", "Haskovo");
+//        nodeMap.put("Sarah", "Blagoevgrad");
+//        nodeMap.put("Peter", "Sofia");
+//        nodeMap.put("Frank", "Sofia");
+//        nodeMap.put("George", "Sofia");
+//        nodeMap.put("Garry", "Sofia");
+//        nodeMap.put("Bush", "Sofia");
+//        nodeMap.put("Boris", "Sofia");
+//        nodeMap.put("Ivan", "Sofia");
+//        nodeMap.put("Iliqn", "Sofia");
+//        nodeMap.put("Vladimir", "Sofia");
 
-        System.out.println(nodeMap.get("aaa"));
-
+//        nodeMap.put("Zoe", "Brussels");
+//        nodeMap.put("Charlie", "Varna");
+     //   System.out.println(nodeMap.get("aaa"));
+        System.out.println(nodeMap.getSize());
+      //  System.out.println();
     }
 
 

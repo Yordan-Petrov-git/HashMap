@@ -1,7 +1,7 @@
 package Models;
 /**
  * Head
- * Tail
+ * Tail - next
  * Size
  *  key from String can be generic
  *  value from String can be generic
@@ -19,11 +19,6 @@ public class Node {
        this.value=value;
     }
 
-//    public Node (String key){
-//        this(key,value);
-//        this.key=key;
-//        this.value="";
-//    }
 
     @Override
     public String toString() {

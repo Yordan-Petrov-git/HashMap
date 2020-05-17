@@ -7,14 +7,20 @@ package Models;
 public class NodeMap {
 
     private static final int INITIAL_CAPACITY = 4;
+    private static final double LOAD_FACTOR = 0.5;
+    private int size;
 
     NodeList[] buckets;
 
     public NodeMap() {
         this.buckets = new NodeList[INITIAL_CAPACITY];
+        this.size = 0;
     }
 
     public void put(String key, String value) {
+
+
+        resizeWhenNeeded();
 
         //get bucket for key
         int bucketIndex = getBucketIndex(key);
@@ -28,9 +34,12 @@ public class NodeMap {
         NodeList currentBucket = this.buckets[bucketIndex];
 
 
-        Node existing =  currentBucket.getFirstElementWithKey(key);
+        Node existing = currentBucket.getFirstElementWithKey(key);
         //there is no element with this key
-        if (existing==null){
+        if (existing == null) {
+
+            //increase size only when element is unique
+            size++;
 
             //create object of type 'Node' with key and value
             Node nodeToPut = new Node(key, value);
@@ -41,9 +50,43 @@ public class NodeMap {
             return;
         }
 
-        currentBucket.overrideElementWithKey(key,value);
+        currentBucket.overrideElementWithKey(key, value);
     }
 
+    private void resizeWhenNeeded() {
+
+        //TODO IMPLEMENT RESIZE BUCKETS
+
+
+        //bucket length = 4
+        //load factor = 0.5
+        //size = 1
+        //1 < 2 => true
+        if (size < buckets.length * LOAD_FACTOR) {
+            return;
+        }
+        //bucket length = 4
+        //load factor = 0.5
+        //size = 2
+        //2 < 2 => true
+        NodeList[] newBuckets = new NodeList[buckets.length * 2];
+
+        for (NodeList existingList : buckets) {
+
+        }
+    }
+
+    public int getSize() {
+        return this.size;
+    }
+
+    public boolean contains(String key) {
+        String node = this.get(key);
+        if (node != null) {
+            return true;
+        }
+        return false;
+    }
 
     public String get(String key) {
 
@@ -63,4 +106,5 @@ public class NodeMap {
         return Math.abs(key.hashCode()) % buckets.length;
         // gets hash code for the string value of the key
     }
+
 }
