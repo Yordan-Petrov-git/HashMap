@@ -1,2 +1,2 @@
-# HashMap
-HashMap Imlementation 
+# LinkedHashMap 
+LinkedHashMap demo Implementation not optimized yet !
