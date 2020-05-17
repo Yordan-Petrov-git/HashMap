@@ -44,4 +44,17 @@ public class NodeList {
         }
         return sb.toString();
     }
+
+
+    public Node getFirstElementWithKey(String key) {
+        Node currentNode = firstElement;
+
+        while (currentNode != null){
+            if(key.equals(currentNode.key)){
+                return currentNode;
+            }
+            currentNode = currentNode.next;
+        }
+        return null;
+    }
 }
